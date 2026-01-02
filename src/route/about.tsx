@@ -86,14 +86,14 @@ export default function About() {
           <p className="text-xl font-bold italic text-gray-600 mb-12 uppercase tracking-widest">Daily Menu Drops on Social Media</p>
           
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-            <a href="#" className="flex flex-col items-center group">
+            <a href="https://www.facebook.com/share/1BnhvE2gcm/" className="flex flex-col items-center group">
               <div className="text-blue-600 text-8xl md:text-9xl bg-white p-4 rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group-hover:translate-y-[-10px] group-hover:shadow-[12px_12px_0px_0px_rgba(37,99,235,1)] transition-all">
                 <FaFacebookSquare />
               </div>
               <span className="mt-4 font-black uppercase italic text-xl">Facebook</span>
             </a>
 
-            <a href="#" className="flex flex-col items-center group">
+            <a href="https://www.instagram.com/blue_lalyy/?igsh=MWlxOXA4cTR1ZDQ5Zg%3D%3D&fbclid=IwY2xjawPEhspleHRuA2FlbQIxMABicmlkETFmbU9FNmY3N1FyQUl6NDhSc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvNRhaVrum1B1Ukt3GPfK_OwOcdVaWxJ6mFaM31xoT6WOnGrMSlS_r9KJ56Q_aem_XwnaLJtAT86dk6vjzO8Dbw#" className="flex flex-col items-center group">
               <div className="text-pink-600 text-8xl md:text-9xl bg-white p-4 rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group-hover:translate-y-[-10px] group-hover:shadow-[12px_12px_0px_0px_rgba(219,39,119,1)] transition-all">
                 <FaInstagram />
               </div>

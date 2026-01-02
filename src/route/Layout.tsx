@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { TiShoppingCart } from "react-icons/ti";
 import { FaBars } from "react-icons/fa6";
-import { useState, createContext, useContext, } from "react";
+import { useState, createContext, useContext } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -126,15 +126,18 @@ export default function Layout() {
       isActive ? "text-red-500 font-bold" : "text-gray-800 hover:text-red-400"
     }`;
 
-const mobileLinkClass = ({ isActive }: { isActive: boolean }): string => {
-  const base = "cursor-pointer transition-all duration-300 block px-6 py-3 rounded-xl text-xl font-black uppercase italic tracking-tighter mb-2 border-2";
-  
-  const active = "text-white bg-red-600 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -translate-y-1";
-  
-  const inactive = "text-gray-900 bg-white border-transparent hover:border-black hover:shadow-[4px_4px_0px_0px_rgba(239,68,68,1)] hover:-translate-y-1";
+  const mobileLinkClass = ({ isActive }: { isActive: boolean }): string => {
+    const base =
+      "cursor-pointer transition-all duration-300 block px-6 py-3 rounded-xl text-xl font-black uppercase italic tracking-tighter mb-2 border-2";
 
-  return `${base} ${isActive ? active : inactive}`;
-};
+    const active =
+      "text-white bg-red-600 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -translate-y-1";
+
+    const inactive =
+      "text-gray-900 bg-white border-transparent hover:border-black hover:shadow-[4px_4px_0px_0px_rgba(239,68,68,1)] hover:-translate-y-1";
+
+    return `${base} ${isActive ? active : inactive}`;
+  };
 
   // Cart context value
   const cartContextValue: CartContextType = {
@@ -222,7 +225,7 @@ const mobileLinkClass = ({ isActive }: { isActive: boolean }): string => {
 
           {/* Mobile Menu */}
           {show && (
-            <div className="md:hidden flex justify-center flex-col items-center bg-yellow-100 shadow-md p-4 absolute z-10 right-10 top-16 w-48 rounded-lg">
+            <div className="md:hidden flex justify-center flex-col items-center bg-yellow-100 shadow-md p-4 absolute z-50 right-10 top-16 w-48 rounded-lg">
               <ul className="flex flex-col gap-3 text-2xl font-medium w-full">
                 <li>
                   <NavLink
@@ -387,19 +390,29 @@ const mobileLinkClass = ({ isActive }: { isActive: boolean }): string => {
               <h1 className="mb-4 text-xl font-black italic">FOLLOW US</h1>
               <p>Follow our news below</p>
               <div className="flex gap-2 mt-4">
-                <button className="text-blue-600 hover:text-blue-800 cursor-pointer text-4xl bg-white rounded-2xl">
+                <a
+                  href="https://www.facebook.com/share/1BnhvE2gcm/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 cursor-pointer text-4xl bg-white rounded-2xl flex items-center justify-center"
+                >
                   <FaFacebookSquare />
-                </button>
+                </a>
 
-                <button className="text-pink-600 hover:text-pink-800 cursor-pointer text-4xl bg-white rounded-2xl">
+                <a
+                  href="https://www.instagram.com/blue_lalyy/?igsh=MWlxOXA4cTR1ZDQ5Zg%3D%3D&fbclid=IwY2xjawPEhspleHRuA2FlbQIxMABicmlkETFmbU9FNmY3N1FyQUl6NDhSc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvNRhaVrum1B1Ukt3GPfK_OwOcdVaWxJ6mFaM31xoT6WOnGrMSlS_r9KJ56Q_aem_XwnaLJtAT86dk6vjzO8Dbw#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-600 hover:text-pink-800 cursor-pointer text-4xl bg-white rounded-2xl flex items-center justify-center"
+                >
                   <FaInstagram />
-                </button>
+                </a>
               </div>
             </div>
             <div className="flex flex-col items-start">
               <h1 className="mb-4 text-xl font-black italic">CONTACT US</h1>
-              <p>Phone: </p>
-              <p>Email: </p>
+              <p>Phone: 020 91355941</p>
+              <p>Email: Berry@loveproject.com</p>
               <p>Address: 123 Main St, City</p>
             </div>
             <div className="flex flex-col items-start  ">

@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://XAYJS.github.io/pastry-chefs-berry",
+  "homepage": "https://xayjs.github.io/Pestry-Berry-Chef",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

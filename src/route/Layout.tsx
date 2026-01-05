@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { TiShoppingCart } from "react-icons/ti";
 import { FaBars } from "react-icons/fa6";
-import { useState, createContext, useContext } from "react";
+import { useState, useEffect, createContext, useContext } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -58,7 +58,14 @@ export default function Layout() {
   const [show, setShow] = useState<boolean>(false);
 
   // Cart state with TypeScript type
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = useState<CartItem[]>(() => {
+  const storedCart = localStorage.getItem("cart");
+  return storedCart ? JSON.parse(storedCart) : [];
+});
+useEffect(() => {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}, [cart]);
+
   const [showCartSidebar, setShowCartSidebar] = useState<boolean>(false);
 
   // Function to add items to cart
@@ -118,6 +125,8 @@ export default function Layout() {
     );
     setCart([]);
     setShowCartSidebar(false);
+    localStorage.removeItem("cart");
+
   };
 
   // Link styling functions
